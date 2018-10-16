@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" /> 
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<h2>All Books
+<a th:href="@{'/createExcel'}" style="float:right;"><img th:src="@{/images/excel.jpg}" style="width: 20%;"/></a>
+<a th:href="@{'/createPdf'}" style="float:right;"><img th:src="@{/images/pdf-icon.png}" style="width: 20%;"/></a>
+</h2>
+<div style="margin-top: 20px">
+<table id="book" class="table table-stried table-bordered" style="width: 100%">
+<thead>
+<tr>
+<th>Author</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="books : ${books}">
+<td th:text="${books.author}"></td>
+<td th:text="${books.title}"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div> 
+<!-- <h1>WELCOME</h1> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
